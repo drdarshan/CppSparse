@@ -4,25 +4,51 @@ CppSparse: A C++ sparse matrix library with Python bindings
 
 About
 -----
-
 I have been fascinated with sparse direct solvers ever since I
-encountered them whilst learning finite element analysis back during my
-undergraduate days. One particularly clever trick that stood out was
-the *multi-frontal* method developed by Bruce M. Irons back in the 1960s
-that performed Gaussian elimination on the stiffness matrix *while it
-was being assembled* in the usual element-by-element fashion.
+encountered them whilst learning finite element analysis back during
+my undergraduate days. One particularly clever trick that stood out
+was the *multi-frontal* method developed by Bruce M. Irons
+[Irons1970]_ back in the 1960s that performed Gaussian elimination on
+the stiffness matrix *while it was being assembled* in the usual
+element-by-element fashion.
 
 As a graduate student, I was fortunate enough to re-learn finite
-element methods from Prof. Bathe. One of the intriguing aspects of
+element methods from Prof. K-J Bathe. One of the intriguing aspects of
 sparse solvers he mentioned in his class was the use of methods based
 on graph theory that had surpassed classical *skyline* solvers such as
-COLSOL described in his book [Bathe1995]_. 
+COLSOL described in his book [Bathe1995]_. This was the first time I
+had heard about the connection between finite element methods and
+graph theory - two very distinct worlds that are deeply connected at a
+rather profound level. Although my curiosity was piqued, I did not dig
+deeper into sparse solvers until 2006 when I noticed an announcement
+in SIAM News about an upcoming book by Tim Davis on sparse direct
+solvers [Davis2006]_ and immediately preordered it.
 
+I started reading Davis' book in earnest during Fall 2006 and quickly
+realized that the only way I was going to benefit from the book was to
+digest the (rather terse) algorithms and reimplement them myself along
+with tackling all the exercises. Unfortunately, this has been a rather
+painstaking process and progress was glacially slow until 2011 when I
+resolved to finally dedicate a part of my weekends to understand
+sparse solvers and matrix reordering routines and understand better
+the graph theoretical foundations of sparse linear solvers.
 
+*CppSparse* has been the result of my work so far. It is a sparse
+ matrix library based on the algorithms and exercises in Tim Davis'
+ book. It is implemented in C++ and extensively uses the containers
+ and algorithms in the standard library. This allows me to elide
+ details such as checking for out-of-memory conditions or managing the
+ lifetime of my temporary buffers. The templated nature of *CppSparse*
+ allows it to be used in both 32- and 64-bit libraries and the same
+ code base supports both real and complex-valued sparse matrices. 
+
+*CppSparse* is distributed as a self-contained header-only library. It
+ has very few dependencies besides a half-decent C++ compiler. I
+ primarily use *CppSparse* through its Python bindings and aim for it
+ to be a fully-featured sparse matrix library for Python.
 
 Building CppSparse
 ------------------
-
 *CppSparse* currently reliably builds on Windows using Microsoft
  Visual Studio 2010 and MingW GCC 4.5 (64-bit) and is tested with
  64-bit Python 2.7 and NumPy. I also occassionally build it on my Mac
@@ -51,17 +77,51 @@ Prequisites
 
 Building with the Microsoft C++ compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 * Ensure that you have SWIG in your path.
 * Start up a 64-bit Visual C++ command prompt, navigate to the source
-  directory and run buildswig.bat. 
+  directory and run ``buildswig.bat``. 
 
+Building with MingW GCC
+~~~~~~~~~~~~~~~~~~~~~~~
+* Ensure that you have SWIG and GCC in your path.
+* Navigate to the source directory and run ``make -f Makefile.mingw``
 
 Future plans
 ------------
+* Finish Cholesky factorization
+* Work on QR factorization
+* Work on LU factorization
+* Work on reordering techniques (phew!)
+* Make all return types be ``std::shared_ptr`` so they don't get
+  copied constantly in SWIG.
+* Add more PyUnit tests
+* ...
+
 
 License
 -------
+*CppSparse* is licensed under the `MIT/X11 license`_:
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+.. _`MIT/X11 license`: http://www.opensource.org/licenses/mit-license.php
 
 
 References
