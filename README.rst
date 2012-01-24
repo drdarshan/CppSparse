@@ -30,8 +30,8 @@ digest the (rather terse) algorithms and reimplement them myself along
 with tackling all the exercises. Unfortunately, this has been a rather
 painstaking process and progress was glacially slow until 2011 when I
 resolved to finally dedicate a part of my weekends to understand
-sparse solvers and matrix reordering routines and understand better
-the graph theoretical foundations of sparse linear solvers.
+sparse solvers, matrix reordering algorithms and the graph theoretical
+foundations of sparse linear solvers.
 
 *CppSparse* has been the result of my work so far. It is a sparse matrix
 library based on the algorithms and exercises in Tim Davis' book. It
@@ -52,7 +52,7 @@ Building CppSparse
 *CppSparse* currently reliably builds on Windows using Microsoft
 Visual Studio 2010 and MingW GCC 4.5 (64-bit) and is tested with
 64-bit Python 2.7 and NumPy. I also occassionally build it on my Mac
-OS Snow Leopard and back-port the changes back to Windows.
+OS Snow Leopard and back-port the changes to Windows.
 
 Some of the routines in *CppSparse* use C++11 features such as lambda
 expressions that are not supported out-of-the-box on the older GCC
@@ -95,6 +95,7 @@ Future plans
 * Make all return types be ``std::shared_ptr`` so they don't get
   copied constantly in SWIG.
 * Add more PyUnit tests
+* Finish matrix arithmetic operations
 * ...
 
 
