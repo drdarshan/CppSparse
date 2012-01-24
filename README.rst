@@ -33,28 +33,28 @@ resolved to finally dedicate a part of my weekends to understand
 sparse solvers and matrix reordering routines and understand better
 the graph theoretical foundations of sparse linear solvers.
 
-CppSparse has been the result of my work so far. It is a sparse matrix
- library based on the algorithms and exercises in Tim Davis' book. It
- is implemented in C++ and extensively uses the containers and
- algorithms in the standard library. This allows me to elide details
- such as checking for out-of-memory conditions or managing the
- lifetime of my temporary buffers. The templated nature of *CppSparse*
- allows it to be used in both 32- and 64-bit libraries and the same
- code base supports both real and complex-valued sparse matrices.
+*CppSparse* has been the result of my work so far. It is a sparse matrix
+library based on the algorithms and exercises in Tim Davis' book. It
+is implemented in C++ and extensively uses the containers and
+algorithms in the standard library. This allows me to elide details
+such as checking for out-of-memory conditions or managing the
+lifetime of my temporary buffers. The templated nature of *CppSparse*
+allows it to be used in both 32- and 64-bit libraries and the same
+code base supports both real and complex-valued sparse matrices.
 
-CppSparse is distributed as a self-contained header-only library. It
- has very few dependencies besides a half-decent C++ compiler. I
- primarily use *CppSparse* through its Python bindings and aim for it
- to be a fully-featured sparse matrix library for Python.
+*CppSparse* is distributed as a self-contained header-only library. It
+has very few dependencies besides a half-decent C++ compiler. I
+primarily use *CppSparse* through its Python bindings and aim for it
+to be a fully-featured sparse matrix library for Python.
 
 Building CppSparse
 ------------------
 *CppSparse* currently reliably builds on Windows using Microsoft
- Visual Studio 2010 and MingW GCC 4.5 (64-bit) and is tested with
- 64-bit Python 2.7 and NumPy. I also occassionally build it on my Mac
- OS Snow Leopard and back-port the changes back to Windows.
+Visual Studio 2010 and MingW GCC 4.5 (64-bit) and is tested with
+64-bit Python 2.7 and NumPy. I also occassionally build it on my Mac
+OS Snow Leopard and back-port the changes back to Windows.
 
-Some of the routines in CppSparse use C++11 features such as lambda
+Some of the routines in *CppSparse* use C++11 features such as lambda
 expressions that are not supported out-of-the-box on the older GCC
 installed on Snow Leopard; I will eventually remove these features
 once I have completed a few more chapters in Davis' book. I also had
@@ -77,13 +77,13 @@ Prequisites
 
 Building with the Microsoft C++ compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Ensure that you have SWIG in your path.
+* Ensure that SWIG is in your path.
 * Start up a 64-bit Visual C++ command prompt, navigate to the source
   directory and run ``buildswig.bat``. 
 
 Building with MingW GCC
 ~~~~~~~~~~~~~~~~~~~~~~~
-* Ensure that you have SWIG and GCC in your path.
+* Ensure that SWIG and GCC are in your path.
 * Navigate to the source directory and run ``make -f Makefile.mingw``
 
 Future plans
