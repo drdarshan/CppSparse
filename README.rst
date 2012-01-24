@@ -37,11 +37,11 @@ seemed to choke on them.
 
 Prequisites
 ~~~~~~~~~~~
-* `SWIG` version 2.0.1 or better for generating the Python bindings
-* `Microsoft Windows 7 SDK (64-bit)` that contains the 64-bit version of the Visual C++ compiler, or, 
-* `MingW64` with GCC 4.5 or better for compiling the generated bindings
-* `Python` 64-bit version 2.7 or better (I have not tested *CppSparse* with Python 3.x)
-* `NumPy` compatible with your Python installation. You can get a 64-bit installer for Windows from `Ch. Golke` 's website.
+* `SWIG`_ version 2.0.1 or better for generating the Python bindings
+* `Microsoft Windows 7 SDK (64-bit)`_ that contains the 64-bit version of the Visual C++ compiler, or, 
+* `MingW64`_ with GCC 4.5 or better for compiling the generated bindings
+* `Python`_ 64-bit version 2.7 or better (I have not tested *CppSparse* with Python 3.x)
+* `NumPy`_ compatible with your Python installation. You can get a 64-bit installer for Windows from `Ch. Golke`_ 's website.
 .. _SWIG: http://www.swig.org 
 .. _MingW64: http://tdm-gcc.tdragon.net/
 .. _Microsoft Windows 7 SDK (64-bit): http://www.microsoft.com/download/en/details.aspx?id=8279
@@ -51,8 +51,10 @@ Prequisites
 
 Building with the Microsoft C++ compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Start up a 64-bit Visual C++ command prompt, navigate to the source 
 
+* Ensure that you have SWIG in your path.
+* Start up a 64-bit Visual C++ command prompt, navigate to the source
+  directory and run buildswig.bat. 
 
 
 Future plans
