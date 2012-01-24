@@ -33,16 +33,16 @@ resolved to finally dedicate a part of my weekends to understand
 sparse solvers and matrix reordering routines and understand better
 the graph theoretical foundations of sparse linear solvers.
 
-*CppSparse* has been the result of my work so far. It is a sparse
- matrix library based on the algorithms and exercises in Tim Davis'
- book. It is implemented in C++ and extensively uses the containers
- and algorithms in the standard library. This allows me to elide
- details such as checking for out-of-memory conditions or managing the
+CppSparse has been the result of my work so far. It is a sparse matrix
+ library based on the algorithms and exercises in Tim Davis' book. It
+ is implemented in C++ and extensively uses the containers and
+ algorithms in the standard library. This allows me to elide details
+ such as checking for out-of-memory conditions or managing the
  lifetime of my temporary buffers. The templated nature of *CppSparse*
  allows it to be used in both 32- and 64-bit libraries and the same
- code base supports both real and complex-valued sparse matrices. 
+ code base supports both real and complex-valued sparse matrices.
 
-*CppSparse* is distributed as a self-contained header-only library. It
+CppSparse is distributed as a self-contained header-only library. It
  has very few dependencies besides a half-decent C++ compiler. I
  primarily use *CppSparse* through its Python bindings and aim for it
  to be a fully-featured sparse matrix library for Python.
