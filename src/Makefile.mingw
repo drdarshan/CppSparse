@@ -2,6 +2,9 @@
 
 all: _cppsparse.pyd
 
+cppsparse_wrap.cxx: cppsparse.i
+	swig -c++ -python -includeall -ignoremissing $<
+
 cppsparse_wrap.o : cppsparse_wrap.cxx
 	C:/Python26/Python.exe mingwpatch.py cppsparse_wrap.cxx
 	g++ -shared -std=c++0x -DMS_WIN64 -c -IC:/Python26/Include cppsparse_wrap.cxx
@@ -12,3 +15,4 @@ _cppsparse.pyd: cppsparse_wrap.o
 clean: 
 	del cppsparse_wrap.o 
 	del _cppsparse.pyd
+	del cppsparse_wrap.cxx

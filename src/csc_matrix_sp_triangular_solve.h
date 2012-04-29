@@ -4,7 +4,7 @@
 #define _CSC_MATRIX_SP_TRIANGULAR_SOLVE_H_
 
 template<class idx_type, class el_type>
-void csc_matrix<idx_type, el_type>::lsolve (const csc_t& b, idx_vector_type& x, idx_vector_type& xi, idx_type k = 0) const
+void csc_matrix<idx_type, el_type>::lsolve (const csc_t& b, idx_vector_type& x, idx_vector_type& xi, idx_type k /* = 0 */) const
 {
     if (xi.size() < n_rows())
     {

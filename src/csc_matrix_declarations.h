@@ -25,7 +25,7 @@ public:
 
     
 private:
-    static const idx_type npos = static_cast<idx_type>(-1);
+    static const idx_type npos;
 
     void compress(const triplet_matrix<idx_type, el_type>& triplet);    
     
@@ -368,4 +368,8 @@ public:
      */
     idx_vector_type postorder(const idx_vector_type& parent) const;
 };
+
+template<class idx_type, class el_type>
+const idx_type csc_matrix<idx_type, el_type>::npos = static_cast<idx_type>(-1);
+
 #endif
