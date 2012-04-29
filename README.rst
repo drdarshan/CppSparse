@@ -68,12 +68,14 @@ Prequisites
 * `MingW64`_ with GCC 4.5 or better for compiling the generated bindings
 * `Python`_ 64-bit version 2.7 or better (I have not tested *CppSparse* with Python 3.x)
 * `NumPy`_ compatible with your Python installation. You can get a 64-bit installer for Windows from `Ch. Golke`_ 's website.
+* `GraphViz`_ (optional). Some of the functions generate graphs in the GraphViz format; you can use tools like ``dot`` to post-process these graphs and create pretty pictures.
 .. _SWIG: http://www.swig.org 
 .. _MingW64: http://tdm-gcc.tdragon.net/
 .. _Microsoft Windows 7 SDK (64-bit): http://www.microsoft.com/download/en/details.aspx?id=8279
 .. _Python: http://www.python.org
 .. _NumPy: http://www.numpy.org
 .. _Ch. Golke: http://www.lfd.uci.edu/~gohlke/pythonlibs
+.. _GraphViz: http://www.graphviz.org
 
 Building with the Microsoft C++ compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
