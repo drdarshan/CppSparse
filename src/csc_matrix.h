@@ -50,6 +50,7 @@ class csc_matrix;
 #include "csc_matrix_perm_col_triangular_solve.h"
 #include "csc_matrix_perm_triangular_solve_general.h"
 #include "csc_matrix_etree.h"
+#include "csc_matrix_etree_liu.h"
 #include "csc_matrix_ereach.h"
 #include "csc_matrix_postorder.h"
 #endif 

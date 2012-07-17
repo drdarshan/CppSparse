@@ -355,6 +355,8 @@ public:
     void        etree_plot (const std::string& file_name, bool trans = false) const;
     std::string etree_plot (bool trans = false) const;
 
+    idx_vector_type etree_liu() const;
+
     idx_type ereach (const idx_vector_type& parent, 
                      idx_type col, idx_vector_type& stack, idx_vector_type& work) const;
 
