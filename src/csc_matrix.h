@@ -52,5 +52,6 @@ class csc_matrix;
 #include "csc_matrix_etree.h"
 #include "csc_matrix_etree_liu.h"
 #include "csc_matrix_ereach.h"
+#include "csc_matrix_ereach2.h"
 #include "csc_matrix_postorder.h"
 #endif 

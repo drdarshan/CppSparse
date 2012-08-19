@@ -16,7 +16,7 @@ csc_matrix<idx_type, el_type>::postorder(const idx_vector_type& parent) const
     // child and make it the first child of the parent. This ensures that
     // the first child of a node is the one with the highest number, i.e.,
     // the list of children are sorted in reverse order
-    for (idx_type col = 0; col < m_n_cols; col ++)
+    for (auto col = m_n_cols - 1; col != npos; col --)
     {
         if (parent[col] != npos)
         {
@@ -26,14 +26,15 @@ csc_matrix<idx_type, el_type>::postorder(const idx_vector_type& parent) const
         }
     }
 
-    idx_vector_type stack;
-    idx_vector_type post;
+    idx_vector_type stack, post;
     
     stack.reserve(m_n_cols); // Pushs and Pops can be constant time as opposed to amortized constant time.
     post.reserve(m_n_cols);
 
     for (idx_type col = 0; col < m_n_cols; col ++)
     {
+        // Depth-first search only needs to be performed on the root nodes
+        // of the elimination forest
         if (parent[col] == npos)
         {
             dfs_tree (col, first_child, next_sibling, post, stack);

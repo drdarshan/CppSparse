@@ -11,6 +11,7 @@ typename csc_matrix<idx_type, el_type>::idx_vector_type csc_matrix<idx_type, el_
     }
 
     auto  n = n_cols();
+
     // parent[I] is the immediate parent of node I 
     // in the elimination tree.
     idx_vector_type parent  (n, npos);
@@ -28,6 +29,7 @@ typename csc_matrix<idx_type, el_type>::idx_vector_type csc_matrix<idx_type, el_
                 break;
             }
 
+            // Walk up the "virtual" forest until you reach the root
             while(ancestor[row] != npos && ancestor[row] != col)
             {
                 auto temp     = ancestor[row];

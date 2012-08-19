@@ -23,7 +23,6 @@ public:
     typedef typename abstract_sparse_matrix<idx_type, el_type>::idx_vector_type idx_vector_type;
     typedef typename abstract_sparse_matrix<idx_type, el_type>::elt_vector_type elt_vector_type;
 
-    
 private:
     static const idx_type npos;
 
@@ -355,12 +354,23 @@ public:
     void        etree_plot (const std::string& file_name, bool trans = false) const;
     std::string etree_plot (bool trans = false) const;
 
+    /**
+     * Implementation of elimination tree construction based on Liu's
+     * original algorithm with path compression.
+     */
     idx_vector_type etree_liu() const;
 
     idx_type ereach (const idx_vector_type& parent, 
                      idx_type col, idx_vector_type& stack, idx_vector_type& work) const;
 
     idx_vector_type ereach(idx_type col) const;
+
+    /**
+     * Reachability for Cholesky factorization.
+     */
+    void ereach2(const idx_vector_type& parent, idx_type col, std::vector<bool>& marked, idx_vector_type& reach) const;
+
+    idx_vector_type ereach2(const idx_vector_type& parent, idx_type col) const;
 
     /**
      * Postorder the elimination tree for a symmetrix matrix.
