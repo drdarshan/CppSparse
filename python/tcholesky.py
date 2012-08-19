@@ -13,6 +13,11 @@ class TestCholesky(unittest.TestCase):
         reachesActual   = [list(self.A.ereach2(etree, j)) for j in range(6, 12)]
         reachesExpected = [[1, 4], [1, 6], [2, 3, 5], [6, 7], [3, 8, 4, 6, 7, 9], [3, 8, 10, 5, 7, 9]]
         self.assertEqual(reachesExpected, reachesActual)
-    
+        
+    def testPostorder(self):
+        etree = self.A.etree_liu()
+        post  = list(self.A.postorder(etree))
+        self.assertEqual([2, 3, 5, 8, 1, 4, 6, 7, 9, 10, 11], post[1:])
+
 if __name__=="__main__":
     unittest.main()
