@@ -25,7 +25,8 @@ void csc_matrix<idx_type, el_type>::ereach2(const idx_vector_type& parent, idx_t
         while(!marked[row])
         {
             reach.push_back(row);
-            row = parent[row];
+            marked[row] = true;
+            row         = parent[row];
         }        
     }
 
