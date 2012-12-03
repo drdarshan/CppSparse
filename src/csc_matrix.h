@@ -54,4 +54,5 @@ class csc_matrix;
 #include "csc_matrix_ereach.h"
 #include "csc_matrix_ereach2.h"
 #include "csc_matrix_postorder.h"
+#include "csc_matrix_first_descendent.h"
 #endif 

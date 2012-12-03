@@ -22,4 +22,3 @@
 %template(dtrp) triplet_matrix<size_t, double>;
 %template(dvec) std::vector<double>;
 %template(ivec) std::vector<size_t>;
-

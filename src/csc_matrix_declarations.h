@@ -379,6 +379,11 @@ public:
      * decendents of a verted <em>k</em> are numbered consecutively.
      */
     idx_vector_type postorder(const idx_vector_type& parent) const;
+
+    std::pair<idx_vector_type, idx_vector_type> first_descendent(const idx_vector_type& parent, const idx_vector_type& post_order) const;
+
+    void first_descendent(const idx_vector_type& parent, const idx_vector_type& post_order, idx_vector_type& first_descendent, idx_vector_type& level) const;
+
 };
 
 template<class idx_type, class el_type>
