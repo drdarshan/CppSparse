@@ -10,7 +10,7 @@ class triplet_matrix;
 enum norm_type {NORM_ONE, NORM_INF, NORM_FRO};
 enum perm_type {PERM_ROW, PERM_COL, PERM_SYM};
 enum uplo_type {UPPER_TRIANGULAR, LOWER_TRIANGULAR};
-enum leaf_type {NOT_LEAF, FIRST_LEAF, OTHER_LEFT};
+enum leaf_type {NOT_LEAF, FIRST_LEAF, OTHER_LEAF};
 template<class idx_type, class el_type> 
 class csc_matrix;
 
@@ -57,4 +57,6 @@ class csc_matrix;
 #include "csc_matrix_postorder.h"
 #include "csc_matrix_first_descendent.h"
 #include "csc_matrix_least_common_ancestor.h"
+#include "csc_matrix_row_counts.h"
+#include "csc_matrix_column_counts.h"
 #endif 

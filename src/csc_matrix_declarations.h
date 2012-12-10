@@ -380,16 +380,32 @@ public:
      */
     idx_vector_type postorder(const idx_vector_type& parent) const;
 
-    std::pair<idx_vector_type, idx_vector_type> first_descendent(const idx_vector_type& parent, const idx_vector_type& post_order) const;
+    std::pair<idx_vector_type, idx_vector_type> first_descendent(const idx_vector_type& parent, 
+                                                                 const idx_vector_type& post_order) const;
 
-    void first_descendent(const idx_vector_type& parent, const idx_vector_type& post_order, idx_vector_type& first_descendent, idx_vector_type& level) const;
+    void first_descendent(const idx_vector_type& parent, 
+                          const idx_vector_type& post_order, 
+                          idx_vector_type&       first_descendent, 
+                          idx_vector_type&       level) const;
 
     std::pair<leaf_type, idx_type> least_common_ancestor(idx_type               i, 
                                                          idx_type               j, 
                                                          const idx_vector_type& first_descendent,
                                                          idx_vector_type&       ancestor,
                                                          idx_vector_type&       maximal_first_descendent,
-                                                         idx_type&              previous_leaf) const;
+                                                         idx_vector_type&       previous_leaf) const;
+
+    idx_vector_type row_counts(const idx_vector_type& parent, 
+                               const idx_vector_type& post_order) const;
+
+    idx_vector_type column_counts(const idx_vector_type& parent,
+                                  const idx_vector_type& post_order) const;
+
+
+    idx_vector_type column_counts(const idx_vector_type& parent,
+                                  const idx_vector_type& post_order,
+                                  bool                   ata) const;
+    
 };
 
 template<class idx_type, class el_type>
