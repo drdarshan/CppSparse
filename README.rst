@@ -91,6 +91,8 @@ Building with MingW GCC
 Future plans
 ------------
 * Finish Cholesky factorization
+  - Numerical factorization and 
+  - Column Cholesky factorization are still pending
 * Work on QR factorization
 * Work on LU factorization
 * Work on reordering techniques (phew!)
