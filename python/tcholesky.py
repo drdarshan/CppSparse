@@ -29,6 +29,20 @@ class TestCholesky(unittest.TestCase):
         self.assertEqual([0, 5, 1, 1, 6, 3, 5, 5, 1, 5, 1, 1], list(first))
         self.assertEqual([0, 5, 4, 3, 5, 3, 4, 3, 2, 2, 1, 0], list(level))
 
+    def testRowCounts(self):
+        etree  = self.A.etree_liu()
+        post   = self.A.postorder(etree)
+        rowcnt = self.A.row_counts(etree, post)
+        
+        self.assertEqual([1, 1, 1, 2, 1, 1, 3, 3, 4, 3, 7, 7], list(rowcnt))
+
+    def testColumnCounts(self):
+        etree  = self.A.etree_liu()
+        post   = self.A.postorder(etree)
+        colcnt = self.A.column_counts(etree, post)
+        
+        self.assertEqual([1, 3, 3, 4, 3, 3, 4, 4, 3, 3, 2, 1], list(colcnt))
+        
 
 if __name__=="__main__":
     unittest.main()

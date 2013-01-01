@@ -39,7 +39,7 @@ csc_matrix<idx_type, el_type>::row_counts(const idx_vector_type& parent,
 
             if (lca_leaf_type.first == FIRST_LEAF || lca_leaf_type.first == OTHER_LEAF)
             {
-                row_count[i] += (level[lca_leaf_type.second] - level[j]);
+                row_count[i] += (level[j] - level[lca_leaf_type.second]);
             }
         }
         

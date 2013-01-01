@@ -23,15 +23,13 @@ csc_matrix<idx_type, el_type>::column_counts(const idx_vector_type& parent,
         {
             column_count[j] = 1;
         }
-        else
-        {
-            column_count[j] = 0;
-        }
 
+        // Compute the first decendents
+        // c.f. csc_matrix<idx_type, el_type>::first_descendent
         while(j != npos && first[j] == npos)
         {
             first[j] = k;
-            j        = first[j];
+            j        = parent[j];
         }
     }
 
@@ -39,6 +37,11 @@ csc_matrix<idx_type, el_type>::column_counts(const idx_vector_type& parent,
     for (idx_type k = 0; k < m_n_rows; k ++)
     {
         auto j = post_order[k];
+
+        if (parent[j] != npos)
+        {
+            column_count[parent[j]] -= 1;
+        }
 
         for (idx_type offset = m_col_idx[j]; offset < m_col_idx[j + 1]; offset ++)
         {
@@ -55,12 +58,12 @@ csc_matrix<idx_type, el_type>::column_counts(const idx_vector_type& parent,
             
             if (leaf_type == FIRST_LEAF || leaf_type == OTHER_LEAF)
             {
-                column_count[j] ++;
+                column_count[j] += 1;
             }
 
             if (leaf_type == OTHER_LEAF)
             {
-                column_count[lca] --;
+                column_count[lca] -= 1;
             }
         }
 
