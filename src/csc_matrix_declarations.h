@@ -43,6 +43,8 @@ private:
     void scatter (csc_t& result, idx_type column, el_type beta, 
                   idx_vector_type& work, elt_vector_type& x, idx_type mark, idx_type& nnz) const;
 
+    void scatter (idx_type column, elt_vector_type& work) const;
+
     el_type norm_one () const;
     el_type norm_inf () const;
     el_type norm_fro () const;
@@ -405,6 +407,10 @@ public:
     idx_vector_type column_counts(const idx_vector_type& parent,
                                   const idx_vector_type& post_order,
                                   bool                   ata) const;
+    
+    csc_matrix<idx_type, el_type> update_downdate(const csc_matrix<idx_type, el_type>& w,
+                                                  const idx_vector_type&               parent,
+                                                  bool                                 update = true);
     
 };
 

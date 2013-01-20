@@ -29,4 +29,17 @@ void csc_matrix<idx_type, el_type> :: scatter (csc_matrix<idx_type, el_type>& re
     }
 }
 
+
+template<class idx_type, class el_type>
+void csc_matrix<idx_type, el_type> :: scatter (idx_type column, elt_vector_type& work) const
+{
+    work.resize(m_n_rows);
+
+    for (auto offset = m_col_idx[column]; offset < m_col_idx[column + 1]; offset ++)
+    {
+	auto row = m_row_idx[offset];
+	auto val = m_x[offset];        
+        work[row] = val;
+    }
+}
 #endif // _CSC_MATRIX_SCATTER_H_

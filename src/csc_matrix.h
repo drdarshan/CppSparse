@@ -59,4 +59,5 @@ class csc_matrix;
 #include "csc_matrix_least_common_ancestor.h"
 #include "csc_matrix_row_counts.h"
 #include "csc_matrix_column_counts.h"
+#include "csc_matrix_update_downdate.h"
 #endif 
