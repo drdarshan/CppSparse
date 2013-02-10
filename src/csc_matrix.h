@@ -60,4 +60,5 @@ class csc_matrix;
 #include "csc_matrix_row_counts.h"
 #include "csc_matrix_column_counts.h"
 #include "csc_matrix_update_downdate.h"
+#include "csc_matrix_etree_row_column_counts.h"
 #endif 

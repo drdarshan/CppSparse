@@ -411,6 +411,12 @@ public:
     csc_matrix<idx_type, el_type> update_downdate(const csc_matrix<idx_type, el_type>& w,
                                                   const idx_vector_type&               parent,
                                                   bool                                 update = true);
+
+    /**
+     * Compute elimination tree, row counts and column counts
+     * in O(|L|) time using O(N) workspace.
+     */
+    void etree_row_column_counts(idx_vector_type& parent, idx_vector_type& row_counts, idx_vector_type& column_counts) const;
     
 };
 
