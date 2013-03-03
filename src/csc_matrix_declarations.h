@@ -417,6 +417,13 @@ public:
      * in O(|L|) time using O(N) workspace.
      */
     void etree_row_column_counts(idx_vector_type& parent, idx_vector_type& row_counts, idx_vector_type& column_counts) const;
+
+    /*
+     * If L is a lower-triangular matrix from a Cholesky factorization, compute
+     * L X = B where B is sparse. The output X is also sparse.
+     */
+    csc_matrix<idx_type, el_type> sparse_lower_solve(const idx_vector_type& parent,
+                                                     const csc_matrix<idx_type, el_type>& rhs) const;
     
 };
 
