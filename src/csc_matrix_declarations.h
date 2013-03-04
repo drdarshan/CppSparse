@@ -424,6 +424,13 @@ public:
      */
     csc_matrix<idx_type, el_type> sparse_lower_solve(const idx_vector_type& parent,
                                                      const csc_matrix<idx_type, el_type>& rhs) const;
+
+    /*
+     * If L is a lower-triangular matrix from a Cholesky factorization, compute
+     * L' X = B where B is sparse. The output X is also sparse.
+     */
+    csc_matrix<idx_type, el_type> sparse_upper_solve(const idx_vector_type& parent,
+                                                     const csc_matrix<idx_type, el_type>& rhs) const;
     
 };
 

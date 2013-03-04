@@ -62,4 +62,5 @@ class csc_matrix;
 #include "csc_matrix_update_downdate.h"
 #include "csc_matrix_etree_row_column_counts.h"
 #include "csc_matrix_sparse_lower_solve.h"
+#include "csc_matrix_sparse_upper_solve.h"
 #endif 
