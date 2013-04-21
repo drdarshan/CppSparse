@@ -432,6 +432,11 @@ public:
     csc_matrix<idx_type, el_type> sparse_upper_solve(const idx_vector_type& parent,
                                                      const csc_matrix<idx_type, el_type>& rhs) const;
     
+
+    /*
+     * Computes the height of the elimination tree
+     */
+    idx_type elim_tree_height(const idx_vector_type& parent) const;
 };
 
 template<class idx_type, class el_type>

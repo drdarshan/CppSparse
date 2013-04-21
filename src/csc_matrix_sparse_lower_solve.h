@@ -8,7 +8,7 @@ csc_matrix<idx_type, el_type>::sparse_lower_solve(const typename csc_matrix<idx_
                                                   const csc_matrix<idx_type, el_type>& rhs) const
 {
     // Mark = True <=> Xi != 0
-    std::vector<bool> mark(m_n_rows, false);
+    std::vector<bool> mark(m_n_rows);
     idx_type nonzeros = 0;
 
     // Symbolic computation step, find the number of nonzeros of X and the
@@ -39,8 +39,6 @@ csc_matrix<idx_type, el_type>::sparse_lower_solve(const typename csc_matrix<idx_
     
 
     // Compute the final result
-    // Symbolic computation step, find the number of nonzeros of X and the
-    // non-zero pattern using the array Mark
     for (auto offset = 0; offset != rhs.m_col_idx[1]; offset ++)
     {
         auto col = rhs.m_row_idx[offset];

@@ -56,6 +56,9 @@ class TestCholesky(unittest.TestCase):
         self.assertEqual(self.colcounts, list(colcnt))
         
         
+    def testElimTreeHeight(self):
+        parent = self.A.etree_liu()
+        self.assertEqual(5, self.A.elim_tree_height(parent))
 
 if __name__=="__main__":
     unittest.main()
