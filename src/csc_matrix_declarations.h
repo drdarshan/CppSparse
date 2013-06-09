@@ -425,7 +425,7 @@ public:
     csc_matrix<idx_type, el_type> sparse_lower_solve(const idx_vector_type& parent,
                                                      const csc_matrix<idx_type, el_type>& rhs) const;
 
-    /*
+    /**
      * If L is a lower-triangular matrix from a Cholesky factorization, compute
      * L' X = B where B is sparse. The output X is also sparse.
      */
@@ -433,10 +433,16 @@ public:
                                                      const csc_matrix<idx_type, el_type>& rhs) const;
     
 
-    /*
+    /**
      * Computes the height of the elimination tree
      */
     idx_type elim_tree_height(const idx_vector_type& parent) const;
+
+    /**
+     * Applies (I - beta * v * v') * y 
+     * where y is a dense vector and v is a column of a sparse matrix.
+     */
+    void apply_householder(idx_type column, el_type beta, std::vector<el_type>& vec) const;
 };
 
 template<class idx_type, class el_type>

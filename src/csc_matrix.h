@@ -64,4 +64,5 @@ class csc_matrix;
 #include "csc_matrix_sparse_lower_solve.h"
 #include "csc_matrix_sparse_upper_solve.h"
 #include "csc_matrix_elim_tree_height.h"
+#include "csc_matrix_apply_householder.h"
 #endif 
