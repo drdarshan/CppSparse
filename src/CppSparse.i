@@ -6,6 +6,7 @@
 // Includes the header in the wrapper code 
 #include "triplet_matrix.h"
 #include "csc_matrix.h"
+#include "householder.h"
 #include <sstream>
 #include <iostream>
 %}
@@ -16,9 +17,11 @@
 %include "triplet_matrix.h"
 %include "csc_matrix.h"
 %include "csc_matrix_declarations.h"
+%include "householder.h"
 
 %template(dabs) abstract_sparse_matrix<size_t, double>;
 %template(dcsc) csc_matrix<size_t, double>;
 %template(dtrp) triplet_matrix<size_t, double>;
 %template(dvec) std::vector<double>;
 %template(ivec) std::vector<size_t>;
+%template(dhouse) householder<double>;
